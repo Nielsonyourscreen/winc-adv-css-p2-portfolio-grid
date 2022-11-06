@@ -1,0 +1,100 @@
+@import "variables";
+
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: $backgroundColor;
+}
+
+.photogrid {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: $Medium;
+  grid-gap: $Small;
+  margin: $Medium;
+
+  .container {
+    position: relative;
+    width: 100%;
+
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: $Medium;
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: $overlayColor;
+  border-radius: $Medium;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  font-size: $Medium;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  button {
+    padding: $Small;
+    border-radius: $Small;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 800px) {
+  .photogrid {
+    padding: $Medium;
+    grid-gap: $Medium;
+  }
+}
+
+/*XL Tablet*/
+@media screen and (min-width: 1000px) {
+  body {
+    padding: 0 $Large 0 $Large;
+  }
+
+  .photogrid {
+    padding: $Medium;
+    grid-gap: $Large;
+    margin: $Medium $Large $Medium $Large;
+
+  }
+}
+
+/* Laptop/computer*/
+@media screen and (min-width: 1240px) {
+  body {
+    padding: 0 $XXLarge 0 $XXLarge;
+  }
+
+  .photogrid {
+    padding: $Medium;
+    grid-gap: $Large;
+    margin: $Medium $Large $Medium $Large;
+
+  }
+}

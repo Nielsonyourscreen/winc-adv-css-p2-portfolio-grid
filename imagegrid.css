@@ -1,0 +1,90 @@
+/*Variables*/
+/*Colors*/
+/* Sizes / dimensions*/
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #c3cfe2;
+}
+
+.photogrid {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  padding: 20px;
+  grid-gap: 10px;
+  margin: 20px;
+}
+.photogrid .container {
+  position: relative;
+  width: 100%;
+}
+.photogrid .container .image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Tablet */
+@media screen and (min-width: 800px) {
+  .photogrid {
+    padding: 20px;
+    grid-gap: 20px;
+  }
+}
+/*XL Tablet*/
+@media screen and (min-width: 1000px) {
+  body {
+    padding: 0 50px 0 50px;
+  }
+  .photogrid {
+    padding: 20px;
+    grid-gap: 50px;
+    margin: 20px 50px 20px 50px;
+  }
+}
+/* Laptop/computer*/
+@media screen and (min-width: 1240px) {
+  body {
+    padding: 0 175px 0 175px;
+  }
+  .photogrid {
+    padding: 20px;
+    grid-gap: 50px;
+    margin: 20px 50px 20px 50px;
+  }
+}/*# sourceMappingURL=imagegrid.css.map */
